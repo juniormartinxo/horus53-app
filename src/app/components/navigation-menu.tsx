@@ -10,75 +10,63 @@ import {
   BsFillHouseDoorFill,
 } from 'react-icons/bs'
 
+import styles from '../styles.module.css'
+
 const NavigationMenu = () => {
   return (
-    <div className='text-slate-400 w-full text-sm'>
-      <ul className='mt-5'>
-        <li>
-          <Link
-            href='/'
-            className='px-6 py-3 flex items-center gap-3 hover:text-gray-300  transition duration-700 hover:bg-sky-900'
-          >
-            <BsFillHouseDoorFill /> Início
-          </Link>
-        </li>
-        <li>
-          <Link
-            href='/users'
-            className='px-6 py-3 flex items-center gap-3 hover:text-gray-300  transition duration-700 hover:bg-sky-900'
-          >
-            <BsFillPersonLinesFill /> Usuários
-          </Link>
-        </li>
-        <li>
-          <Link
-            href='/cameras'
-            className='px-6 py-3 flex items-center gap-3 hover:text-gray-300  transition duration-700 hover:bg-sky-900'
-          >
-            <BsFillCameraVideoFill /> Câmeras
-          </Link>
-        </li>
-        <li>
-          <Link
-            href='#'
-            className='px-6 py-3 flex items-center gap-3 hover:text-gray-300  transition duration-700 hover:bg-sky-900'
-          >
-            <BsBuildingFill /> Unidades
-          </Link>
-        </li>
-        <li>
-          <Link
-            href='#'
-            className='px-6 py-3 flex items-center gap-3 hover:text-gray-300  transition duration-700 hover:bg-sky-900'
-          >
-            <BsBuildingsFill /> Órgãos
-          </Link>
-        </li>
-        <li>
-          <Link
-            href='#'
-            className='px-6 py-3 flex items-center gap-3 hover:text-gray-300  transition duration-700 hover:bg-sky-900'
-          >
-            <BsFillBellFill /> Alertas
-          </Link>
-        </li>
-        <li>
-          <Link
-            href='#'
-            className='px-6 py-3 flex items-center gap-3 hover:text-gray-300  transition duration-700 hover:bg-sky-900'
-          >
-            <BsFillCameraFill /> Capturas
-          </Link>
-        </li>
-        <li>
+    <div id='menu' className='w-[250px] bg-white border-r border-slate-200'>
+      <div className='text-slate-500 w-full text-sm flex flex-col justify-between content-between h-full'>
+        <ul className='mt-5 flex flex-col'>
+          <div className='mb-12'>
+            <h3 className='flex gap-2 pl-4 text-lg items-center text-blue-700 mb-3'>
+              <BsFillHouseDoorFill /> Painel de controle
+            </h3>
+            <li className={styles.menuItem}>
+              <Link href='/'>
+                <span>Home</span>
+              </Link>
+            </li>
+            <li className={styles.menuItem}>
+              <Link href='/dashboard/users'>
+                <span>Usuários</span>
+              </Link>
+            </li>
+            <li className={styles.menuItem}>
+              <Link href='/dashboard/cameras'>
+                <span>Câmeras</span>
+              </Link>
+            </li>
+            <li className={styles.menuItem}>
+              <Link href='#'>
+                <span>Unidades</span>
+              </Link>
+            </li>
+            <li className={styles.menuItem}>
+              <Link href='#'>
+                <span>Órgãos</span>
+              </Link>
+            </li>
+            <li className={styles.menuItem}>
+              <Link href='#'>
+                <span>Alertas</span>
+              </Link>
+            </li>
+            <li className={styles.menuItem}>
+              <Link href='#'>
+                <span>Capturas</span>
+              </Link>
+            </li>
+          </div>
+        </ul>
+        <div className=''>
           <Link
             href='login'
-            className='px-6 py-3 flex items-center gap-3 hover:text-gray-300  transition duration-700 hover:bg-sky-900'
+            className='pl-3 py-3 flex text-base items-center gap-3 hover:bg-red-500  transition duration-700 bg-blue-800 text-white'
           >
             <BsDoorOpenFill /> Sair
           </Link>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   )
 }
