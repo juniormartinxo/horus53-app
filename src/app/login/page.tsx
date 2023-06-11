@@ -1,9 +1,9 @@
 import { Audiowide } from 'next/font/google'
+import PasswordInput from '../components/password'
+import Link from 'next/link'
 import Image from 'next/image'
 import hexagon from '../../../public/images/bg/hexagon.svg'
 import styles from '../styles.module.css'
-import PasswordInput from '../components/password'
-import Link from 'next/link'
 
 const audiowide = Audiowide({ weight: '400', subsets: ['latin'] })
 
@@ -12,14 +12,13 @@ export const metadata = {
   description: 'Login do Horus53',
 }
 
-export default function Login() {
+export default function LoginPage() {
   return (
     <main className='flex min-h-screen justify-between w-full'>
       <div className={styles.bgWrap}>
         <Image
           alt='hexagon'
           src={hexagon}
-          //placeholder='blur'
           quality={100}
           fill
           sizes='100vw'
