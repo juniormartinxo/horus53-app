@@ -7,13 +7,13 @@ import Link from 'next/link'
 const audiowide = Audiowide({ weight: '400', subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Horus53 :: Login',
-  description: 'Login do Horus53',
+  title: 'Horus53 :: Recuperação de senha',
+  description: 'Recuperação de senha do Horus53',
 }
 
-export default function Login() {
+export default function ForgotPasswordPage() {
   return (
-    <main className='flex flex-col min-h-screen justify-center'>
+    <main className='flex min-h-screen justify-between w-full'>
       <div className={styles.bgWrap}>
         <Image
           alt='hexagon'
@@ -25,7 +25,6 @@ export default function Login() {
           style={{ objectFit: 'cover', objectPosition: 'center' }}
         />
       </div>
-
       <section className='flex flex-col w-full justify-center justify-items-stretch align-middle items-center'>
         <div className='flex justify-center self-center z-10'>
           <div className='p-12 bg-white mx-auto rounded-md w-96 '>
@@ -59,7 +58,7 @@ export default function Login() {
               <div className='flex items-center justify-between'>
                 <div className='text-sm ml-auto'>
                   <Link
-                    href='login'
+                    href='/login'
                     className='text-blue-700 hover:text-blue-600'
                   >
                     Voltar ao login
