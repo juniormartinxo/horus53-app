@@ -1,11 +1,8 @@
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Link from 'next/link'
+import { Poppins } from 'next/font/google'
 import Favicon from './components/favicon'
-import NavigationMenu from './components/navigation-menu'
-import NavTop from './components/nav-top'
+import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({ weight: '400', subsets: ['latin'] })
 
 export const metadata = {
   title: 'Horus53 App',
@@ -20,19 +17,7 @@ export default function RootLayout({
   return (
     <html lang='pt-br'>
       <Favicon />
-      <body className={inter.className}>
-        <main className='flex flex-col h-screen'>
-          <NavTop />
-          <div className='flex flex-wrap h-screen'>
-            <div id='menu' className='w-[250px] bg-slate-600 shadow-r-sm'>
-              <NavigationMenu />
-            </div>
-            <div id='container' className='flex-grow p-4'>
-              {children}
-            </div>
-          </div>
-        </main>
-      </body>
+      <body className={poppins.className}>{children}</body>
     </html>
   )
 }
