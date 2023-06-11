@@ -5,3 +5,46 @@
   overflow: hidden;
   z-index: -1;
 }
+
+/* Estilos personalizados */
+.menuItem {
+  position: relative;
+  margin-left: 25px;
+  cursor: pointer;
+  padding: 0 5px;
+  list-style: none;
+}
+
+.menuItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 2px;
+  transition: width 0.3s ease-in-out;
+
+  @apply bg-slate-400;
+}
+
+.menuItem:hover::before {
+  width: 25px;
+  transition: width 0.4s ease-in-out;
+
+  @apply bg-blue-500;
+}
+
+.menuItem a {
+  @apply px-3 py-2 flex items-center gap-3 hover:text-blue-600  transition duration-700;
+}
+
+.menuItem span {
+  transition: margin-left 0.4s ease-in-out;
+  @apply text-sm;
+}
+
+.menuItem:hover span {
+  margin-left: 25px;
+  transition: margin-left 0.4s ease-in-out;
+}
