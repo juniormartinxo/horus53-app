@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <main className='flex flex-col h-screen'>
+    <main className='flex flex-col h-screen bg-gray-100'>
       <NavTop />
       <div className='flex flex-wrap h-screen'>
         <NavigationMenu />
