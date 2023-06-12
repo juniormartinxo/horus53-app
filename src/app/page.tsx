@@ -3,7 +3,7 @@ import NavTop from './components/nav-top'
 
 export default function HomePage() {
   return (
-    <main className='flex flex-col h-screen'>
+    <main className='flex flex-col h-screen bg-gray-100'>
       <NavTop />
       <div className='flex flex-wrap h-screen'>
         <NavigationMenu />
