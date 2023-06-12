@@ -14,7 +14,7 @@ import styles from '../styles.module.css'
 
 const NavigationMenu = () => {
   return (
-    <div id='menu' className='w-[250px] bg-white border-r border-slate-200'>
+    <div id='menu' className='w-[251px] bg-white border-r border-slate-200'>
       <div className='text-slate-500 w-full text-sm flex flex-col justify-between content-between h-full'>
         <ul className='mt-5 flex flex-col'>
           <div className='mb-12'>
