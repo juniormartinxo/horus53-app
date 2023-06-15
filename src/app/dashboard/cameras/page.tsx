@@ -2,7 +2,7 @@ export default function Users() {
   return (
     <div className='flex flex-col flex-grow bg-white shadow-sm'>
       <div className='mb-5 border-b border-gray-300 p-4'>
-        <h1 className='text-xl font-semibold'>Usuários</h1>
+        <h1 className='text-xl font-semibold'>Câmeras</h1>
       </div>
 
       <div className='p-4'>

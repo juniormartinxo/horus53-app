@@ -7,44 +7,106 @@
 }
 
 /* Estilos personalizados */
+
+.menuItemActive {
+  position: relative;
+  cursor: pointer;
+  padding: 0 25px;
+  list-style: none;
+  @apply text-white  bg-blue-500;
+
+  a {
+    @apply px-3 py-2 flex items-center gap-3 transition duration-700;
+  }
+
+  span {
+    transition: margin-left 0.4s ease-in-out;
+
+    @apply text-sm;
+  }
+
+  &:hover {
+    &::before {
+      width: 25px;
+      transition: width 0.4s ease-in-out;
+    }
+
+    span {
+      margin-left: 25px;
+      transition: margin-left 0.4s ease-in-out;
+    }
+  }
+
+  &::before {
+    content: '✬';
+    position: absolute;
+    left: 22px;
+    top: 22%;
+    width: 5px;
+    height: 2px;
+    transition: width 0.3s ease-in-out;
+  }
+}
+
 .menuItem {
   position: relative;
-  margin-left: 25px;
   cursor: pointer;
-  padding: 0 5px;
+  padding: 0 25px;
   list-style: none;
+
+  a {
+    @apply px-3 py-2 flex items-center gap-3 hover:text-blue-600  transition duration-700;
+  }
+
+  span {
+    transition: margin-left 0.4s ease-in-out;
+
+    @apply text-sm;
+  }
+
+  &:hover {
+    &::before {
+      width: 25px;
+      transition: width 0.4s ease-in-out;
+      @apply bg-blue-500;
+    }
+
+    span {
+      margin-left: 25px;
+      transition: margin-left 0.4s ease-in-out;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 2px;
+    transition: width 0.3s ease-in-out;
+
+    @apply bg-slate-400;
+  }
 }
 
-.menuItem::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 5px;
-  height: 2px;
-  transition: width 0.3s ease-in-out;
+.cardDashboard {
+  @apply flex flex-row bg-white shadow-sm p-4 rounded-md gap-6 hover:-translate-y-1 duration-500;
 
-  @apply bg-slate-400;
-}
+  .cardDashboardIco {
+    @apply rounded-full h-14 w-14 flex items-center justify-center mask mask-hexagon;
+  }
 
-.menuItem:hover::before {
-  width: 25px;
-  transition: width 0.4s ease-in-out;
+  .cardDashboardBody {
+    @apply flex flex-col justify-between;
 
-  @apply bg-blue-500;
-}
+    .cardDashboardTitle {
+      @apply text-xs text-gray-400 mb-5;
+    }
 
-.menuItem a {
-  @apply px-3 py-2 flex items-center gap-3 hover:text-blue-600  transition duration-700;
-}
-
-.menuItem span {
-  transition: margin-left 0.4s ease-in-out;
-  @apply text-sm;
-}
-
-.menuItem:hover span {
-  margin-left: 25px;
-  transition: margin-left 0.4s ease-in-out;
+    .cardDashboardValue {
+      @apply text-2xl text-gray-600 font-semibold;
+    }
+  }
 }

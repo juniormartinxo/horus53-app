@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import {
   BsFillPersonLinesFill,
@@ -13,6 +14,15 @@ import {
 import styles from '../styles.module.css'
 
 const NavigationMenu = () => {
+  const menuActive = (path: string) => {
+    return path === window.location.pathname ? 'bg-blue-500' : ''
+  }
+  const menuActiveText = (path: string) => {
+    return path === window.location.pathname ? 'text-white' : ''
+  }
+
+  const path = window.location.pathname
+
   return (
     <div id='menu' className='w-[251px] bg-white border-r border-slate-200'>
       <div className='text-slate-500 w-full text-sm flex flex-col justify-between content-between h-full'>
@@ -26,7 +36,13 @@ const NavigationMenu = () => {
                 <span>Home</span>
               </Link>
             </li>
-            <li className={styles.menuItem}>
+            <li
+              className={
+                path === window.location.pathname
+                  ? styles.menuItemActive
+                  : styles.menuItem
+              }
+            >
               <Link href='/dashboard/users'>
                 <span>Usuários</span>
               </Link>
