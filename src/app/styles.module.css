@@ -7,46 +7,88 @@
 }
 
 /* Estilos personalizados */
+
+.menuItemActive {
+  position: relative;
+  cursor: pointer;
+  padding: 0 25px;
+  list-style: none;
+  @apply text-white  bg-blue-500;
+
+  a {
+    @apply px-3 py-2 flex items-center gap-3 transition duration-700;
+  }
+
+  span {
+    transition: margin-left 0.4s ease-in-out;
+
+    @apply text-sm;
+  }
+
+  &:hover {
+    &::before {
+      width: 25px;
+      transition: width 0.4s ease-in-out;
+    }
+
+    span {
+      margin-left: 25px;
+      transition: margin-left 0.4s ease-in-out;
+    }
+  }
+
+  &::before {
+    content: '✬';
+    position: absolute;
+    left: 22px;
+    top: 22%;
+    width: 5px;
+    height: 2px;
+    transition: width 0.3s ease-in-out;
+  }
+}
+
 .menuItem {
   position: relative;
-  margin-left: 25px;
   cursor: pointer;
-  padding: 0 5px;
+  padding: 0 25px;
   list-style: none;
-}
 
-.menuItem::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 5px;
-  height: 2px;
-  transition: width 0.3s ease-in-out;
+  a {
+    @apply px-3 py-2 flex items-center gap-3 hover:text-blue-600  transition duration-700;
+  }
 
-  @apply bg-slate-400;
-}
+  span {
+    transition: margin-left 0.4s ease-in-out;
 
-.menuItem:hover::before {
-  width: 25px;
-  transition: width 0.4s ease-in-out;
+    @apply text-sm;
+  }
 
-  @apply bg-blue-500;
-}
+  &:hover {
+    &::before {
+      width: 25px;
+      transition: width 0.4s ease-in-out;
+      @apply bg-blue-500;
+    }
 
-.menuItem a {
-  @apply px-3 py-2 flex items-center gap-3 hover:text-blue-600  transition duration-700;
-}
+    span {
+      margin-left: 25px;
+      transition: margin-left 0.4s ease-in-out;
+    }
+  }
 
-.menuItem span {
-  transition: margin-left 0.4s ease-in-out;
-  @apply text-sm;
-}
+  &::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 2px;
+    transition: width 0.3s ease-in-out;
 
-.menuItem:hover span {
-  margin-left: 25px;
-  transition: margin-left 0.4s ease-in-out;
+    @apply bg-slate-400;
+  }
 }
 
 .cardDashboard {
