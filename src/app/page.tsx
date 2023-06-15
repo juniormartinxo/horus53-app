@@ -1,4 +1,4 @@
-import { BsCameraVideo, BsImages } from 'react-icons/bs'
+import { BsCameraVideo, BsCameraVideoOff } from 'react-icons/bs'
 import { IoCarSportOutline } from 'react-icons/io5'
 import { AiOutlineAlert } from 'react-icons/ai'
 import NavTop from './components/nav-top'
@@ -18,12 +18,24 @@ export default function HomePage() {
                 <div className={styles.cardDashboard}>
                   <div className={styles.cardDashboardBody}>
                     <span className={styles.cardDashboardTitle}>
-                      Câmeras instaladas
+                      Câmeras ativas
                     </span>
                     <span className={styles.cardDashboardValue}>53</span>
                   </div>
-                  <span className={`${styles.cardDashboardIco} bg-blue-700`}>
+                  <span className={`${styles.cardDashboardIco} bg-green-600`}>
                     <BsCameraVideo className='text-2xl text-white' />
+                  </span>
+                </div>
+
+                <div className={styles.cardDashboard}>
+                  <div className={styles.cardDashboardBody}>
+                    <span className={styles.cardDashboardTitle}>
+                      Câmeras inativas
+                    </span>
+                    <span className={styles.cardDashboardValue}>0</span>
+                  </div>
+                  <span className={`${styles.cardDashboardIco} bg-red-600`}>
+                    <BsCameraVideoOff className='text-2xl text-white' />
                   </span>
                 </div>
 
@@ -35,8 +47,8 @@ export default function HomePage() {
                     </span>
                     <span className={styles.cardDashboardValue}>53.530</span>
                   </div>
-                  <span className={`${styles.cardDashboardIco} bg-amber-400`}>
-                    <IoCarSportOutline className='text-2xl text-gray-800' />
+                  <span className={`${styles.cardDashboardIco} bg-zinc-600`}>
+                    <IoCarSportOutline className='text-2xl text-zinc-200' />
                   </span>
                 </div>
 
@@ -48,7 +60,7 @@ export default function HomePage() {
                     </span>
                     <span className={styles.cardDashboardValue}>530</span>
                   </div>
-                  <span className={`${styles.cardDashboardIco} bg-rose-500`}>
+                  <span className={`${styles.cardDashboardIco} bg-amber-500`}>
                     <AiOutlineAlert className='text-2xl text-white' />
                   </span>
                 </div>
