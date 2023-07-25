@@ -32,6 +32,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "daisyui": "^3.1.0",
     "husky": "^8.0.3",
+    "postcss-import": "^15.1.0",
     "postcss-nesting": "^11.3.0"
   },
   "config": {

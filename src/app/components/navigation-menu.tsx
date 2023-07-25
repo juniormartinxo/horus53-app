@@ -1,27 +1,32 @@
 'use client'
 import Link from 'next/link'
-import {
-  BsFillPersonLinesFill,
-  BsFillCameraVideoFill,
-  BsDoorOpenFill,
-  BsBuildingFill,
-  BsBuildingsFill,
-  BsFillBellFill,
-  BsFillCameraFill,
-  BsFillHouseDoorFill,
-} from 'react-icons/bs'
+import { BsDoorOpenFill, BsFillHouseDoorFill } from 'react-icons/bs'
 
 import styles from '../styles.module.css'
+import { use, useEffect, useState } from 'react'
 
 const NavigationMenu = () => {
-  const menuActive = (path: string) => {
-    return path === window.location.pathname ? 'bg-blue-500' : ''
-  }
-  const menuActiveText = (path: string) => {
-    return path === window.location.pathname ? 'text-white' : ''
+  const [path, setPath] = useState('')
+
+  useEffect(() => {
+    setPath(window.location.pathname)
+  }, [])
+
+  const handleMenu = () => {
+    setPath(window.location.pathname)
   }
 
-  const path = window.location.pathname
+  const menus = {
+    0: ['/', 'Home'],
+    1: ['/dashboard/users', 'Usuários'],
+    2: ['/dashboard/cameras', 'Câmeras'],
+    /*3: ['/dashboard/units', 'Unidades'],
+    4: ['/dashboard/organs', 'Órgãos'],
+    5: ['/dashboard/alerts', 'Alertas'],
+    6: ['/dashboard/captures', 'Capturas'],*/
+  }
+
+  console.log('path', path, window.location.pathname)
 
   return (
     <div id='menu' className='w-[251px] bg-white border-r border-slate-200'>
@@ -31,47 +36,21 @@ const NavigationMenu = () => {
             <h3 className='flex gap-2 pl-4 text-lg items-center text-blue-700 mb-3'>
               <BsFillHouseDoorFill /> Painel de controle
             </h3>
-            <li className={styles.menuItem}>
-              <Link href='/'>
-                <span>Home</span>
-              </Link>
-            </li>
-            <li
-              className={
-                path === window.location.pathname
-                  ? styles.menuItemActive
-                  : styles.menuItem
-              }
-            >
-              <Link href='/dashboard/users'>
-                <span>Usuários</span>
-              </Link>
-            </li>
-            <li className={styles.menuItem}>
-              <Link href='/dashboard/cameras'>
-                <span>Câmeras</span>
-              </Link>
-            </li>
-            <li className={styles.menuItem}>
-              <Link href='#'>
-                <span>Unidades</span>
-              </Link>
-            </li>
-            <li className={styles.menuItem}>
-              <Link href='#'>
-                <span>Órgãos</span>
-              </Link>
-            </li>
-            <li className={styles.menuItem}>
-              <Link href='#'>
-                <span>Alertas</span>
-              </Link>
-            </li>
-            <li className={styles.menuItem}>
-              <Link href='#'>
-                <span>Capturas</span>
-              </Link>
-            </li>
+            <ul>
+              {Object.entries(menus).map(([key, value]) => (
+                <li
+                  key={key}
+                  className={
+                    value[0] === path ? styles.menuItemActive : styles.menuItem
+                  }
+                  onClick={handleMenu}
+                >
+                  <Link href={value[0]}>
+                    <span>{value[1]}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </ul>
         <div className=''>
